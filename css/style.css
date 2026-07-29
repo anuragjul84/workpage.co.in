@@ -440,10 +440,12 @@ button {
   display: flex;
   gap: 10px;
   align-items: center;
+  min-width: 0;
 }
-.achievement .chip-icon { width: 32px; height: 32px; font-size: 14px; }
-.achievement-name { font-size: 12.5px; font-weight: 700; }
-.achievement-detail { font-size: 11px; color: var(--ink-soft); }
+.achievement .chip-icon { width: 32px; height: 32px; font-size: 14px; flex-shrink: 0; }
+.achievement-text { min-width: 0; }
+.achievement-name { font-size: 12.5px; font-weight: 700; overflow-wrap: break-word; }
+.achievement-detail { font-size: 11px; color: var(--ink-soft); overflow-wrap: break-word; }
 
 /* github */
 

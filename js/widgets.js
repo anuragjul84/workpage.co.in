@@ -108,27 +108,35 @@
     });
   }
 
-  /* ---------------- Markets (TradingView embed, no key) ---------------- */
+  /* ---------------- Markets (TradingView embed, no key) ----------------
+     Stacked vertical "single quote" widgets — the ticker-tape widget is
+     built for a full-width horizontal ribbon and overflows/overlaps when
+     squeezed into a narrow sidebar column, so each symbol gets its own
+     compact row instead. */
   function initMarkets() {
     var container = document.getElementById("marketTicker");
     if (!container) return;
     var isDark = document.documentElement.getAttribute("data-theme") === "midnight";
-    var wrap = el('<div class="tradingview-widget-container"><div class="tradingview-widget-container__widget"></div></div>');
-    var script = document.createElement("script");
-    script.type = "text/javascript";
-    script.src = "https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js";
-    script.async = true;
-    script.text = JSON.stringify({
-      symbols: sb.marketSymbols,
-      showSymbolLogo: true,
-      colorTheme: isDark ? "dark" : "light",
-      isTransparent: true,
-      displayMode: "adaptive",
-      locale: "en"
-    });
-    wrap.appendChild(script);
     container.innerHTML = "";
-    container.appendChild(wrap);
+    container.className = "widget-list";
+    (sb.marketSymbols || []).forEach(function (s) {
+      var row = el('<div class="tradingview-widget-container market-row"></div>');
+      var inner = el('<div class="tradingview-widget-container__widget"></div>');
+      row.appendChild(inner);
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js";
+      script.async = true;
+      script.text = JSON.stringify({
+        symbol: s.proName,
+        width: "100%",
+        colorTheme: isDark ? "dark" : "light",
+        isTransparent: true,
+        locale: "en"
+      });
+      row.appendChild(script);
+      container.appendChild(row);
+    });
   }
 
   /* ---------------- News (Google News RSS via rss2json, no key required for light use) ---------------- */

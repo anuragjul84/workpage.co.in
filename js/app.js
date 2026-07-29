@@ -120,7 +120,7 @@
     cfg.achievements.forEach(function (a) {
       grid.appendChild(el(
         '<div class="achievement"><span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)">' +
-        icon(a.icon, 14) + '</span><div><div class="achievement-name">' + a.name +
+        icon(a.icon, 14) + '</span><div class="achievement-text"><div class="achievement-name">' + a.name +
         '</div><div class="achievement-detail">' + a.detail + "</div></div></div>"
       ));
     });

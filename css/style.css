@@ -662,6 +662,8 @@ footer {
 
 /* market ticker container needs a fixed-ish height since TradingView iframes size themselves */
 .tradingview-widget-container { border-radius: 14px; overflow: hidden; }
+.market-row { min-height: 44px; }
+.market-row + .market-row { margin-top: 8px; }
 
 @media (max-width: 1180px) {
   .sidebar { width: 280px; }

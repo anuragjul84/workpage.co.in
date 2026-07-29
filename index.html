@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="lavender">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>workpage — Anurag Thakur</title>
+<meta name="description" content="Personal professional dashboard: notes, learning, achievements, GitHub, AI tools, music and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Icon sprite: one inline SVG defs block, referenced everywhere via <use> -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-notebook" viewBox="0 0 24 24"><path d="M4 3h13a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4z"/><path d="M8 3v18M4 8h4M4 13h4M4 18h4"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5-10-5z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/><path d="M22 9v6"/></symbol>
+    <symbol id="i-trophy" viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 0 1-8 0V4z"/><path d="M8 5H4a3 3 0 0 0 3 4M16 5h4a3 3 0 0 1-3 4"/><path d="M10 15h4v3h-4z"/><path d="M8 21h8"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.46-1.16-1.11-1.47-1.11-1.47-.9-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.1.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.4 9.4 0 0 1 5 0c1.9-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.32.68.94.68 1.9v2.82c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></symbol>
+    <symbol id="i-sparkles" viewBox="0 0 24 24"><path d="M12 3l1.5 4.5L18 9l-4.5 1.5L12 15l-1.5-4.5L6 9l4.5-1.5z"/><path d="M19 15l.7 2.3L22 18l-2.3.7L19 21l-.7-2.3L16 18l2.3-.7z"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></symbol>
+    <symbol id="i-bag" viewBox="0 0 24 24"><path d="M6 8h12l1 13H5z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+    <symbol id="i-link" viewBox="0 0 24 24"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1.5 1.5"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1.5-1.5"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><path d="M15 3h6v6"/><path d="M10 14L21 3"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><path d="M3 5h18v14H3z"/><path d="M3 6l9 7 9-7"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+    <symbol id="i-flame" viewBox="0 0 24 24"><path d="M12 2c1 3-2 4-2 7a4 4 0 0 0 8 0c0-1-1-2-1-2 2 1 3 4 3 6a6 6 0 1 1-12 0c0-4 2-5 4-11z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M7 10v7M7 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3l2.5 6.5L21 10l-5.2 4.3L17.5 21 12 17.3 6.5 21l1.7-6.7L3 10l6.5-.5z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></symbol>
+    <symbol id="i-inbox" viewBox="0 0 24 24"><path d="M3 12h5l2 3h4l2-3h5"/><path d="M5.5 5h13L21 12v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-6z"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.4-8 5 5 0 0 1 9.6-2A4.5 4.5 0 0 1 18 18H7z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M4 9h16v4H4z" opacity="0"/><path d="M12 9v11M4 9h16M8.5 9a2.5 2.5 0 1 1 0-5C10.5 4 12 6.5 12 9c0-2.5 1.5-5 3.5-5a2.5 2.5 0 1 1 0 5"/></symbol>
+    <symbol id="i-trending" viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></symbol>
+    <symbol id="i-newspaper" viewBox="0 0 24 24"><path d="M4 4h13a2 2 0 0 1 2 2v13a1 1 0 0 1-1 1H6a2 2 0 0 1-2-2z"/><path d="M19 8h1a1 1 0 0 1 1 1v9a2 2 0 0 1-2 2M7 8h7M7 12h7M7 16h4"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></symbol>
+  </defs>
+</svg>
+
+<!-- MSAL.js — powers the optional Outlook sign-in for Calendar & Action Items -->
+<script src="https://alcdn.msauth.net/browser/2.38.3/js/msal-browser.min.js" defer></script>
+
+<header class="site-header">
+  <div class="wrap">
+    <div class="brand">
+      <span class="brand-mark"><svg class="icon" width="18" height="18"><use href="#i-sparkles"/></svg></span>
+      workpage
+    </div>
+    <nav class="main-nav">
+      <a href="#today">Today</a>
+      <a href="#notes">Notes</a>
+      <a href="#learning">Learning</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#github">GitHub</a>
+      <a href="#ai-studio">AI Studio</a>
+      <a href="#music">Music</a>
+      <a href="#picks">Picks</a>
+      <a href="#profile">Profile</a>
+    </nav>
+    <div class="header-actions">
+      <div class="theme-switcher">
+        <button class="theme-btn" id="themeBtn" aria-label="Change theme"><svg class="icon" width="18" height="18"><use href="#i-sun"/></svg></button>
+        <div class="theme-menu" id="themeMenu">
+          <button class="theme-option" data-theme-set="lavender"><span class="theme-swatch" style="background:#7c5cfc"></span>Lavender</button>
+          <button class="theme-option" data-theme-set="peach"><span class="theme-swatch" style="background:#ff7a4a"></span>Peach</button>
+          <button class="theme-option" data-theme-set="mint"><span class="theme-swatch" style="background:#12a97a"></span>Mint</button>
+          <button class="theme-option" data-theme-set="midnight"><span class="theme-swatch" style="background:#b79cff"></span>Midnight</button>
+        </div>
+      </div>
+      <div class="avatar" id="headerAvatar">AT</div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero" id="today">
+    <span class="hero-greeting" id="greetingLabel">Good morning</span>
+    <h1 class="hero-title">Here's your <em>workpage</em>, ready when you are.</h1>
+  </section>
+
+  <div class="layout">
+  <div class="bento-col">
+  <div class="bento">
+
+    <!-- Today / focus ring -->
+    <article class="card span-4">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-flame"/></svg></span>
+          <div>
+            <div class="card-title">Today's focus</div>
+            <div class="card-sub" id="streakLabel">Streak loading…</div>
+          </div>
+        </div>
+      </div>
+      <div class="focus-row">
+        <div class="ring" id="focusRing"><div class="ring-inner" id="focusRingLabel">0%</div></div>
+        <div class="focus-detail">
+          <div class="card-title" id="focusTitle">—</div>
+          <p id="focusDetail" style="margin-top:4px;font-size:13.5px">—</p>
+          <span class="badge" id="focusDue" style="margin-top:10px"><svg class="icon" width="12" height="12"><use href="#i-check"/></svg>—</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Quick stats -->
+    <article class="card span-2">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-star"/></svg></span>
+          <div class="card-title">Snapshot</div>
+        </div>
+      </div>
+      <div class="stat-grid" id="statGrid"></div>
+    </article>
+
+    <!-- Notes -->
+    <article class="card span-2" id="notes">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-notebook"/></svg></span>
+          <div>
+            <div class="card-title">Notes</div>
+            <div class="card-sub">Saved privately in this browser</div>
+          </div>
+        </div>
+      </div>
+      <div class="note-input">
+        <input type="text" id="noteInput" placeholder="Jot something down…" maxlength="200">
+        <button class="note-add-btn" id="noteAddBtn" aria-label="Add note"><svg class="icon" width="16" height="16"><use href="#i-plus"/></svg></button>
+      </div>
+      <div class="note-list" id="noteList"></div>
+    </article>
+
+    <!-- Professional Learning -->
+    <article class="card span-2" id="learning">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-cap"/></svg></span>
+          <div>
+            <div class="card-title">Professional learning</div>
+            <div class="card-sub">Skill progress, self-rated</div>
+          </div>
+        </div>
+      </div>
+      <div id="learningList" style="display:flex;flex-direction:column;gap:12px"></div>
+    </article>
+
+    <!-- Achievements -->
+    <article class="card span-2" id="achievements">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-trophy"/></svg></span>
+          <div>
+            <div class="card-title">Achievements</div>
+            <div class="card-sub">Certifications & badges</div>
+          </div>
+        </div>
+        <a class="card-link" id="linkedinLink" href="#" target="_blank" rel="noopener">LinkedIn <svg class="icon" width="12" height="12"><use href="#i-external"/></svg></a>
+      </div>
+      <div class="badge-grid" id="achievementGrid"></div>
+    </article>
+
+    <!-- GitHub -->
+    <article class="card span-3" id="github">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-github"/></svg></span>
+          <div>
+            <div class="card-title">GitHub</div>
+            <div class="card-sub" id="ghHandle">Live from your profile</div>
+          </div>
+        </div>
+        <a class="card-link" id="ghProfileLink" href="#" target="_blank" rel="noopener">Profile <svg class="icon" width="12" height="12"><use href="#i-external"/></svg></a>
+      </div>
+      <div class="gh-stats" id="ghStats"></div>
+      <div class="gh-repo-list" id="ghRepoList"></div>
+    </article>
+
+    <!-- AI Studio -->
+    <article class="card span-3" id="ai-studio">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-sparkles"/></svg></span>
+          <div>
+            <div class="card-title">AI Studio</div>
+            <div class="card-sub">Ask once, send to any assistant</div>
+          </div>
+        </div>
+      </div>
+      <div class="ai-input-row">
+        <input type="text" id="aiInput" placeholder="Type your question…">
+        <button class="ai-send" id="aiCopyBtn">Copy</button>
+      </div>
+      <div class="ai-tool-grid" id="aiToolGrid"></div>
+      <p class="ai-hint">Copies your question, then opens the tool — paste if it doesn't prefill automatically.</p>
+    </article>
+
+    <!-- Music -->
+    <article class="card span-3" id="music">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-music"/></svg></span>
+          <div>
+            <div class="card-title">Music</div>
+            <div class="card-sub">Focus playlist + your other apps</div>
+          </div>
+        </div>
+      </div>
+      <div class="spotify-embed">
+        <iframe id="spotifyFrame" style="border-radius:16px" width="100%" height="152" frameborder="0" allow="encrypted-media"></iframe>
+      </div>
+      <div class="music-links" id="musicLinks"></div>
+    </article>
+
+    <!-- Picks / Amazon -->
+    <article class="card span-3" id="picks">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-bag"/></svg></span>
+          <div>
+            <div class="card-title">Favorite picks</div>
+            <div class="card-sub">Things I actually use</div>
+          </div>
+        </div>
+      </div>
+      <div class="picks-grid" id="picksGrid"></div>
+      <p class="affiliate-note" id="affiliateNote"></p>
+    </article>
+
+    <!-- Quick links -->
+    <article class="card span-6">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="18" height="18"><use href="#i-link"/></svg></span>
+          <div class="card-title">Quick links</div>
+        </div>
+      </div>
+      <div class="quick-link-grid" id="quickLinkGrid"></div>
+    </article>
+
+    <!-- Profile / footer strip -->
+    <article class="card span-6" id="profile">
+      <div class="profile-strip">
+        <div class="profile-info">
+          <div class="profile-avatar" id="profileAvatar">AT</div>
+          <div>
+            <div class="profile-name" id="profileName">—</div>
+            <div class="profile-title" id="profileTitle">—</div>
+          </div>
+        </div>
+        <div class="social-row" id="socialRow"></div>
+      </div>
+    </article>
+
+  </div>
+  </div><!-- /.bento-col -->
+
+  <aside class="sidebar" id="sidebar">
+
+    <!-- Outlook: Calendar + Action Items -->
+    <div class="card widget" id="outlookWidget">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="16" height="16"><use href="#i-calendar"/></svg></span>
+          <div class="card-title" style="font-size:14.5px">Outlook</div>
+        </div>
+        <button class="card-link" id="outlookAuthBtn">Connect</button>
+      </div>
+      <div id="outlookBody">
+        <p style="font-size:12.5px">Connect your Microsoft account to see today's meetings and flagged mail here.</p>
+      </div>
+    </div>
+
+    <!-- World clocks -->
+    <div class="card widget">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="16" height="16"><use href="#i-clock"/></svg></span>
+          <div class="card-title" style="font-size:14.5px">World clocks</div>
+        </div>
+      </div>
+      <div class="clock-grid" id="clockGrid"></div>
+    </div>
+
+    <!-- Weather -->
+    <div class="card widget">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="16" height="16"><use href="#i-cloud"/></svg></span>
+          <div class="card-title" style="font-size:14.5px">Weather</div>
+        </div>
+      </div>
+      <div class="widget-list" id="weatherList"></div>
+    </div>
+
+    <!-- Public holidays -->
+    <div class="card widget">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="16" height="16"><use href="#i-gift"/></svg></span>
+          <div class="card-title" style="font-size:14.5px">Next public holiday</div>
+        </div>
+      </div>
+      <div class="widget-list" id="holidayList"></div>
+    </div>
+
+    <!-- Markets -->
+    <div class="card widget">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="16" height="16"><use href="#i-trending"/></svg></span>
+          <div class="card-title" style="font-size:14.5px">Markets</div>
+        </div>
+      </div>
+      <div id="marketTicker"></div>
+    </div>
+
+    <!-- News -->
+    <div class="card widget">
+      <div class="card-head">
+        <div class="card-title-group">
+          <span class="chip-icon" style="background:var(--accent-soft);color:var(--accent)"><svg class="icon" width="16" height="16"><use href="#i-newspaper"/></svg></span>
+          <div class="card-title" style="font-size:14.5px">News</div>
+        </div>
+      </div>
+      <div id="newsList" style="display:flex;flex-direction:column;gap:14px"></div>
+    </div>
+
+  </aside>
+  </div><!-- /.layout -->
+</main>
+
+<footer>
+  <div class="wrap">workpage.co.in — built for one person, edited from <code>js/config.js</code></div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/app.js"></script>
+<script src="js/widgets.js"></script>
+</body>
+</html>
